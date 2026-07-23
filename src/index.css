@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-black text-white;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  a, button, input, select, textarea {
+    cursor: none;
+  }
+
+  .font-podium {
+    font-family: 'FSP DEMO - PODIUM Sharp 4.11', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .hero-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500;
+  }
+
+  .navbar-glass {
+    background: rgba(4, 6, 14, 0.4);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    opacity: 0;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  }
+
+  .animate-fade-up-delay-2 {
+    opacity: 0;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+
+  .animate-fade-up-delay-3 {
+    opacity: 0;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  }
+
+  .animate-fade-up-delay-4 {
+    opacity: 0;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3,
+  .animate-fade-up-delay-4,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,4 +1,4 @@
-import { Trophy, Users, Globe, Cpu } from 'lucide-react';
+import { Trophy, Users, Cpu } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const STATS = [

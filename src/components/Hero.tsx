@@ -1,5 +1,5 @@
 import { ArrowRight, Play, Trophy } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
 import characterImg from '../assets/character1.png';
 
 interface HeroProps {
@@ -11,7 +11,7 @@ export default function Hero({ onNavigate }: HeroProps) {
   const backgroundY = useTransform(scrollY, [0, 1000], ['0%', '30%']);
   const imageY = useTransform(scrollY, [0, 1000], ['0%', '-15%']);
 
-  const wordVariants = {
+  const wordVariants: Variants = {
     hidden: { opacity: 0, y: 50, rotateX: -45 },
     visible: (i: number) => ({
       opacity: 1,
